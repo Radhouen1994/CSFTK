@@ -1,0 +1,18 @@
+prebtp_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:Prebtp:index" }
+    methods:  GET
+
+prebtp_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Prebtp:show" }
+    methods:  GET
+prebtp_Validate:
+    path:     /{id}/Validate
+    defaults: { _controller: "AdminBundle:Prebtp:Validate" }
+prebtp_Delete:
+    path:     /Delete/{id}
+    defaults: { _controller: "AdminBundle:Prebtp:delete" }
+
+
+

@@ -1,0 +1,24 @@
+documentadministratif_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:DocumentAdministratif:index" }
+    methods:  GET
+
+documentadministratif_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:DocumentAdministratif:show" }
+    methods:  GET
+
+documentadministratif_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:DocumentAdministratif:new" }
+    methods:  [GET, POST]
+
+documentadministratif_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:DocumentAdministratif:edit" }
+    methods:  [GET, POST]
+
+documentadministratif_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:DocumentAdministratif:delete" }
+    methods:  DELETE

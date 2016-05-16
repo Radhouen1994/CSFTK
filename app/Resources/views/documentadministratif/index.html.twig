@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>DocumentAdministratif list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Path</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for documentAdministratif in documentAdministratifs %}
+            <tr>
+                <td>{{ documentAdministratif.nom }}</td>
+                <td>{{ documentAdministratif.path }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('documentadministratif_show', { 'id': documentAdministratif.iddocument }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('documentadministratif_edit', { 'id': documentAdministratif.iddocument }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('documentadministratif_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

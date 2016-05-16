@@ -1,0 +1,50 @@
+Resultat:
+    type: entity
+    table: resultat
+    indexes:
+        fk_Resultat_formateur1_idx:
+            columns:
+                - formateur_idformateur
+    id:
+        idresultat:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idResultat
+            generator:
+                strategy: IDENTITY
+    fields:
+        module:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: Module
+        specialite:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: Specialite
+        path:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    manyToOne:
+        formateurformateur:
+            targetEntity: Formateur
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                formateur_idformateur:
+                    referencedColumnName: idformateur
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

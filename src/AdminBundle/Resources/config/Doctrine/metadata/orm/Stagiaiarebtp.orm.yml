@@ -1,0 +1,73 @@
+Stagiaiarebtp:
+    type: entity
+    table: stagiaiarebtp
+    indexes:
+        fk_StagiaiareBTP_groupe_idx:
+            columns:
+                - groupe_idgroupe
+        fk_stagiaiarebtp_session1_idx:
+            columns:
+                - session_idsession
+    id:
+        idstagiaiarebtp:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idStagiaiareBTP
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        prenoml:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        cin:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        photo:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    manyToOne:
+        groupegroupe:
+            targetEntity: Groupe
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                groupe_idgroupe:
+                    referencedColumnName: idgroupe
+            orphanRemoval: false
+        sessionsession:
+            targetEntity: Session
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                session_idsession:
+                    referencedColumnName: idsession
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,99 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div class="col-lg-6 col-lg-offset-1" style="overflow-x: auto;">
+    <h1>Prebtp list</h1>
+
+    <table class="table table-responsive">
+        <thead class="table">
+            <tr>
+                <th>Numdossier</th>
+                <th>Cin</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <!--<th>Datenaiss</th>
+                <th>Ville</th>
+                <th>Region</th>
+                <th>Numtel</th>
+                <th>Section</th>
+                <th>Moyenne</th>
+                <th>Math</th>
+                <th>Physique</th>
+                <th>Francais</th>
+                <th>Anglais</th>
+                <th>Typeedu</th>
+                <th>Sexe</th>
+                <th>Email</th>
+                <th>Datedebprive</th>
+                <th>Etat</th>-->
+                <th>Actions</th>
+                <th>Groupe</th>
+                <th>Valider</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prebtp in prebtps %}
+            <tr>
+                <td>{{ prebtp.numdossier }}</td>
+                <td>{{ prebtp.cin }}</td>
+                <td>{{ prebtp.nom }}</td>
+                <td>{{ prebtp.prenom }}</td>
+               <!-- <td>{% if prebtp.dateNaiss %}{{ prebtp.dateNaiss|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ prebtp.ville }}</td>
+                <td>{{ prebtp.region }}</td>
+                <td>{{ prebtp.numtel }}</td>
+                <td>{{ prebtp.section }}</td>
+                <td>{{ prebtp.moyenne }}</td>
+                <td>{{ prebtp.math }}</td>
+                <td>{{ prebtp.physique }}</td>
+                <td>{{ prebtp.francais }}</td>
+                <td>{{ prebtp.anglais }}</td>
+                <td>{{ prebtp.typeedu }}</td>
+                <td>{{ prebtp.sexe }}</td>
+                <td>{{ prebtp.email }}</td>
+                <td>{% if prebtp.dateDebPrive %}{{ prebtp.dateDebPrive|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ prebtp.etat }}</td>-->
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('prebtp_show', { 'id': prebtp.idprebtp }) }}" class="btn btn-xs btn-primary">show</a>
+                        </li>
+                    </ul>
+                </td>
+                  <form action="{{ path('prebtp_Validate', {'id':prebtp.idprebtp }) }}" method="post">
+                <td>
+
+
+                        <select class="form-control"  name="groupe" >
+                            {% for grp in grp  %}
+                               <h3> {{ grp.idgroupe }}</h3>
+                                <option value="{{ grp.idgroupe }}">{{ grp.nom }}</option>
+
+                            {% endfor %}
+                        </select>
+
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <input type="submit" name="Ok" value="Valider" class="btn btn-md btn-success">
+                        </li>
+                    </ul>
+                </td>
+
+            </form>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('prebtp_Delete', { 'id': prebtp.idprebtp }) }}" class="btn btn-xs btn-danger">Delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+  <div>
+{% endblock %}

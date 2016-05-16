@@ -1,0 +1,24 @@
+stagiaiarebts_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:Stagiaiarebts:index" }
+    methods:  GET
+
+stagiaiarebts_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Stagiaiarebts:show" }
+    methods:  GET
+
+stagiaiarebts_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Stagiaiarebts:new" }
+    methods:  [GET, POST]
+
+stagiaiarebts_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Stagiaiarebts:edit" }
+    methods:  [GET, POST]
+
+stagiaiarebts_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Stagiaiarebts:delete" }
+    methods:  DELETE

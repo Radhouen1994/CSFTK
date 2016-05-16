@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>filiere list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prog</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for filiere in filieres %}
+            <tr>
+                <td>{{ filiere.nom }}</td>
+                <td>{{ filiere.prog }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('filiere_show', { 'id': filiere.idfiliere }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('filiere_edit', { 'id': filiere.idfiliere }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('filiere_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

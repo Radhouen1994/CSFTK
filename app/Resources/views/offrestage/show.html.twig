@@ -1,0 +1,38 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>OffreStage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ offreStage.nom }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ offreStage.contenu }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ offreStage.photo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('offrestage_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('offrestage_edit', { 'id': offreStage.idoffreStage }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete"class="btn btn-md btn-danger" style="float: right;">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-8">
+    <h1>Stagiaiarebts</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ stagiaiarebt.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenoml</th>
+                <td>{{ stagiaiarebt.prenoml }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ stagiaiarebt.cin }}</td>
+            </tr>
+            <tr>
+                <th>Specialite</th>
+                <td>{{ stagiaiarebt.specialite }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ stagiaiarebt.email }}</td>
+            </tr>
+            <tr>
+                <th>Pff</th>
+                <td>{{ stagiaiarebt.pff }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ stagiaiarebt.photo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('stagiaiarebts_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('stagiaiarebts_edit', { 'id': stagiaiarebt.idstagiaiarebts }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-md btn-danger" style="float: right;">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+{% endblock %}

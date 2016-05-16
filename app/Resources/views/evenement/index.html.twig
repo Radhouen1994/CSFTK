@@ -1,0 +1,45 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>Evenement list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Date</th>
+                <th>Contenu</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for evenement in evenements %}
+            <tr>
+                <td>{{ evenement.titre }}</td>
+                <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ evenement.contenu }}</td>
+                <td>{{ evenement.photo }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('evenement_show', { 'id': evenement.idevenement }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('evenement_edit', { 'id': evenement.idevenement }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('evenement_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

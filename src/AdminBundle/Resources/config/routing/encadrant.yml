@@ -1,0 +1,24 @@
+encadrant_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:Encadrant:index" }
+    methods:  GET
+
+encadrant_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Encadrant:show" }
+    methods:  GET
+
+encadrant_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Encadrant:new" }
+    methods:  [GET, POST]
+
+encadrant_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Encadrant:edit" }
+    methods:  [GET, POST]
+
+encadrant_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Encadrant:delete" }
+    methods:  DELETE

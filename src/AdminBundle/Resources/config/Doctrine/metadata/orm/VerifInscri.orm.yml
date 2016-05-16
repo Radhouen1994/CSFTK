@@ -1,0 +1,29 @@
+VerifInscri:
+    type: entity
+    table: verif_inscri
+    id:
+        idverifInscri:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idVerif_Inscri
+            generator:
+                strategy: IDENTITY
+    fields:
+        verCin:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: Ver_cin
+        verNomdoss:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: Ver_nomDoss
+    lifecycleCallbacks: {  }

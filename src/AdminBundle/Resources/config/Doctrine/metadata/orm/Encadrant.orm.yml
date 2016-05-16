@@ -1,0 +1,45 @@
+Encadrant:
+    type: entity
+    table: encadrant
+    id:
+        idencadrant:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idEncadrant
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        prenom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        cin:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        tel:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

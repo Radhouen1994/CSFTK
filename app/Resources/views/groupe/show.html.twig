@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>Groupe</h1>
+
+    <table class="table table-responsive">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ groupe.nom }}</td>
+            </tr>
+            <tr>
+                <th>Specialite</th>
+                <td>{{ groupe.specialite }}</td>
+            </tr>
+            <tr>
+                <th>Emploi</th>
+                <td>{{ groupe.emploi }}</td>
+            </tr>
+            <tr>
+                <th>Cal</th>
+                <td>{{ groupe.cal }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('groupe_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('groupe_edit', { 'id': groupe.idgroupe }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-md btn-danger" style="float: right;">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+{% endblock %}

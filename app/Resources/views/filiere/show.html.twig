@@ -1,0 +1,34 @@
+{% extends 'admin.html.twig ' %}
+
+{% block body %}
+<div class="col-lg-5 col-lg-offset-1">
+    <h1>filiere</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ filiere.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prog</th>
+                <td>{{ filiere.prog }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('filiere_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('filiere_edit', { 'id': filiere.idfiliere }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-md btn-primary" style="float: right;">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+{% endblock %}

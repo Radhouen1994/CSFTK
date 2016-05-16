@@ -1,0 +1,43 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>OffreStage list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Contenu</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offreStage in offreStages %}
+            <tr>
+                <td>{{ offreStage.nom }}</td>
+                <td>{{ offreStage.contenu }}</td>
+                <td>{{ offreStage.photo }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('offrestage_show', { 'id': offreStage.idoffreStage }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('offrestage_edit', { 'id': offreStage.idoffreStage }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('offrestage_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

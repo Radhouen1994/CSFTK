@@ -1,0 +1,47 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-8 col-lg-offset-1" style="overflow-x: auto;">
+    <h1>Stagiaiarebtp list</h1>
+
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenoml</th>
+                <th>Cin</th>
+                <th>Email</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stagiaiarebtp in stagiaiarebtps %}
+            <tr>
+                <td>{{ stagiaiarebtp.nom }}</td>
+                <td>{{ stagiaiarebtp.prenoml }}</td>
+                <td>{{ stagiaiarebtp.cin }}</td>
+                <td>{{ stagiaiarebtp.email }}</td>
+                <td>{{ stagiaiarebtp.photo }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('stagiaiarebtp_show', { 'id': stagiaiarebtp.idstagiaiarebtp }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('stagiaiarebtp_edit', { 'id': stagiaiarebtp.idstagiaiarebtp }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('stagiaiarebtp_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

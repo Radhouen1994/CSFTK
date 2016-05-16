@@ -1,0 +1,34 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>DocumentAdministratif</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ documentAdministratif.nom }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ documentAdministratif.path }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('documentadministratif_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('documentadministratif_edit', { 'id': documentAdministratif.iddocument }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-md btn-danger" style="float: right;"/>
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+{% endblock %}

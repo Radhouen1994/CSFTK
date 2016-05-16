@@ -1,0 +1,123 @@
+Prebts:
+    type: entity
+    table: prebts
+    id:
+        idprebts:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idpreBTS
+            generator:
+                strategy: IDENTITY
+    fields:
+        numdossier:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: numDossier
+        cin:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: CIN
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        prenom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        dateNaiss:
+            type: date
+            nullable: true
+            column: date_naiss
+        ville:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        region:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        numtel:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: numTel
+        section:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        moyenne:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        math:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        physique:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        francais:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        anglais:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        sexe:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        etat:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        specialite:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

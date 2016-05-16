@@ -1,0 +1,51 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-8 col-lg-offset-1" style="overflow-x: auto;">
+    <h1>Stagiaiarebts list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenoml</th>
+                <th>Cin</th>
+                <th>Specialite</th>
+                <th>Email</th>
+                <th>Pff</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stagiaiarebt in stagiaiarebts %}
+            <tr>
+                <td>{{ stagiaiarebt.nom }}</td>
+                <td>{{ stagiaiarebt.prenoml }}</td>
+                <td>{{ stagiaiarebt.cin }}</td>
+                <td>{{ stagiaiarebt.specialite }}</td>
+                <td>{{ stagiaiarebt.email }}</td>
+                <td>{{ stagiaiarebt.pff }}</td>
+                <td>{{ stagiaiarebt.photo }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('stagiaiarebts_show', { 'id': stagiaiarebt.idstagiaiarebts }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('stagiaiarebts_edit', { 'id': stagiaiarebt.idstagiaiarebts }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('stagiaiarebts_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

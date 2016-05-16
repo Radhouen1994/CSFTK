@@ -1,0 +1,223 @@
+<html>
+<head>
+    <title>{% block title %}CSFTK{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Ultra Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+
+
+    {% block stylesheets %}{% endblock %}
+
+<!-- CSS --><link href="{{ asset('bundles/stagiaire/css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+<!-- Custom CSS --><link href="{{  asset('bundles/stagiaire/css/style.css')}}" rel='stylesheet' type='text/css' />
+<!-- font-awesome icons --><link href="{{  asset('bundles/stagiaire/css/font-awesome.css')}}" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href="{{  asset('bundles/stagiaire/css/jquerysctipttop.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{  asset('bundles/stagiaire/css/custom.css')}}" rel="stylesheet">
+</head>
+
+
+<body class="cbp-spmenu-push">
+<div class="main-content">
+    <!--left-fixed -navigation-->
+    <div class="sidebar" role="navigation">
+        <div class="navbar-collapse">
+            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right dev-page-sidebar mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar" id="cbp-spmenu-s1">
+                <div class="scrollbar scrollbar1">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#" class="active"><i class="fa fa-user nav_icon"></i>Profil</a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-building-o nav_icon"></i>Consulter <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="#">Moyenne</a>
+                                </li>
+                                <li>
+                                    <a href="#">Emploi de temp</a>
+                                </li>
+                                <li>
+                                    <a href="#">Calendrier des examens</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cours</a>
+                                </li>
+
+                            </ul>
+                            <!-- /nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-th-large nav_icon"></i>Demande de stage<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="{{ path('Depo') }}">Deposer Projet</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('ListeProjet') }}">Selctioner Projet</a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="#"><i class="fa fa-check-square-o nav_icon"></i>Forum<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="#">Docuemnt</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-th-large nav_icon"></i>offre de stage</a>
+                        </li>
+
+
+
+        </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+    <!--left-fixed -navigation-->
+    <!-- header-starts -->
+    <div class="sticky-header header-section ">
+        <div class="header-left">
+            <!--logo -->
+            <div class="logo">
+               <a href="#"><img src="{{ asset('bundles/stagiaire/images/logo_centre.png')}}" class="img-responsive" alt="" /></a>
+            </div>
+            <!--//logo-->
+            <div class="user-right">
+                <div class="profile_details_left"><!--notifications of menu start -->
+                    <div class="profile_details">
+                        <ul>
+                            <li class="dropdown profile_details_drop">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile_img">
+                                        <span class="prfil-img"><img src="{{ asset('bundles/stagiaire/images/a.png') }}" alt=""> </span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu drp-mnu">
+                                    <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
+                                    <li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
+                                    <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+
+        <div class="profile_medile"><!--notifications of menu start -->
+            <ul class="nofitications-dropdown">
+
+
+
+                <li class="dropdown head-dpdn">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">3</span></a>
+                    <ul class="dropdown-menu anti-dropdown-menu">
+                        <li>
+                            <div class="notification_header">
+                                <h3>You have 3 new notification</h3>
+                            </div>
+                        </li>
+                        <li><a href="#">
+                                <div class="user_img"><img src="images/2.png" alt=""></div>
+                                <div class="notification_desc">
+                                    <p>Lorem ipsum dolor amet</p>
+                                    <p><span>1 hour ago</span></p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </a></li>
+                        <li class="odd"><a href="#">
+                                <div class="user_img"><img src="images/1.png" alt=""></div>
+                                <div class="notification_desc">
+                                    <p>Lorem ipsum dolor amet </p>
+                                    <p><span>1 hour ago</span></p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </a></li>
+                        <li><a href="#">
+                                <div class="user_img"><img src="images/3.png" alt=""></div>
+                                <div class="notification_desc">
+                                    <p>Lorem ipsum dolor amet </p>
+                                    <p><span>1 hour ago</span></p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </a></li>
+                        <li>
+                            <div class="notification_bottom">
+                                <a href="#">See all notifications</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="header-right">
+            <!--toggle button start-->
+            <div class="search-box">
+                <form class="input">
+                    <input class="sb-search-input input__field--madoka" placeholder="Search..." type="search" id="input-31">
+                </form>
+            </div>
+            <button id="showLeftPush"><i class="fa fa-bars"></i></button>
+            <div class="clearfix"> </div>
+            <!--toggle button end-->
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!-- //header-ends -->
+
+
+{% block body %}
+    {% endblock %}
+
+
+
+
+    <div class="copy-section">
+        <p>&copy; 2016 Ultra Modern. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+    </div>
+</div>
+
+
+
+
+<!-- //Register -->
+{% block javascripts %}{% endblock %}
+<script src="{{  asset('bundles/stagiaire/js/bootstrap.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/jquery-1.11.1.min.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/scripts.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/bootstrap.min.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/jquery.nicescroll.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/metisMenu.min.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/classie.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/js7.js')}}"></script>
+
+<script src="{{  asset('bundles/stagiaire/js/modernizr.custom.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/skycons.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/metisMenu.min.js')}}"></script>
+<script src="{{  asset('bundles/stagiaire/js/custom.js')}}"></script>
+
+
+
+
+
+</body>
+</html>

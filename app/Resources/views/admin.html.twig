@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>CSTFK</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('bundles/admin/css/bootstrap-3.1.1.min.css')}}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{{ asset('bundles/admin/css/workaround.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('bundles/admin/css/dashbord.css')}}" rel="stylesheet">
+
+    <link href="{{ asset('bundles/admin/css/style.css') }}"  rel="stylesheet">
+
+
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="{{ asset('bundles/admin/images/logo_centre.png') }}"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contenu Front-end<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('actualite_index') }}">Actualite</a></li>
+                        <li><a href="{{ path('filiere_index') }}">Filiere</a></li>
+                        <li><a href="{{ path('documentadministratif_index') }}">Document Administratif</a></li>
+                        <li><a href="{{ path('evenement_index') }}">Evenement</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contenu Espacemembre<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('actualitestagiaire_index') }}">Actualite Stagiaire</a></li>
+                        <li><a href="{{ path('offrestage_index') }}">Offre de Stage</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerer Utilisateur<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('stagiaiarebts_index') }}">Stagiaire BTS</a></li>
+                        <li><a href="{{ path('stagiaiarebtp_index') }}">Stagiaire BTP</a></li>
+                        <li><a href="{{ path('formateur_index') }}">Formateur</a></li>
+                        <li><a href="{{ path('encadrant_index') }}">Encadrant</a></li>
+                        <li><a href="{{ path('groupe_index') }}">Ajouter Groupe</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pre-inscription <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('prebts_index') }}">BTS</a></li>
+                        <li><a href="{{ path('prebtp_index') }}">BTP</a></li>
+                        <li><a href="{{ path('verifinscri_index') }}">Ajouter Pre-Inscription</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+
+
+        <div class="col-sm-12 col-md-12  main">
+
+            {% block body %}
+            {% endblock %}
+
+        </div>
+    </div>
+</div>
+
+
+
+{% block javascripts %}{% endblock %}
+<script src="{{ asset('bundles/admin/js/jquery.min.js') }}"></script>
+<script src="{{ asset('bundles/admin/js/jquery.script.js') }}"></script>
+<script src="{{ asset('bundles/admin/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('bundles/admin/js/holder.js') }}"></script>
+<script src="{{ asset('bundles/admin/js/ie10-viewport-bug-workaround.js') }}"></script>
+
+
+</body>
+</html>

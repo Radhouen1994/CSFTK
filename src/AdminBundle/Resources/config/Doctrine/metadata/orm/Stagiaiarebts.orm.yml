@@ -1,0 +1,85 @@
+Stagiaiarebts:
+    type: entity
+    table: stagiaiarebts
+    indexes:
+        fk_StagiaiareBTS_groupe1_idx:
+            columns:
+                - groupe_idgroupe
+        fk_stagiaiarebts_session1_idx:
+            columns:
+                - session_idsession
+    id:
+        idstagiaiarebts:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idStagiaiareBTS
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        prenoml:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        cin:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        specialite:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        pff:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: PFF
+        photo:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    manyToOne:
+        groupegroupe:
+            targetEntity: Groupe
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                groupe_idgroupe:
+                    referencedColumnName: idgroupe
+            orphanRemoval: false
+        sessionsession:
+            targetEntity: Session
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                session_idsession:
+                    referencedColumnName: idsession
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

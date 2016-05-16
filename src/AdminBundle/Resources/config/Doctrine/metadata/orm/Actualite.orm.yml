@@ -1,0 +1,35 @@
+Actualite:
+    type: entity
+    table: actualite
+    id:
+        idactualite:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        contenu:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+        date:
+            type: datetime
+            nullable: true
+        photo:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

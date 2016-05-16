@@ -1,0 +1,24 @@
+offrestage_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:OffreStage:index" }
+    methods:  GET
+
+offrestage_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:OffreStage:show" }
+    methods:  GET
+
+offrestage_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:OffreStage:new" }
+    methods:  [GET, POST]
+
+offrestage_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:OffreStage:edit" }
+    methods:  [GET, POST]
+
+offrestage_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:OffreStage:delete" }
+    methods:  DELETE

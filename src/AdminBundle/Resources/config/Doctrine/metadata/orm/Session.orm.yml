@@ -1,0 +1,34 @@
+Session:
+    type: entity
+    table: session
+    id:
+        idsession:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        anne:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        datedeb:
+            type: date
+            nullable: true
+            column: dateDeb
+        datefin:
+            type: date
+            nullable: true
+            column: dateFin
+    lifecycleCallbacks: {  }

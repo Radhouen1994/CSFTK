@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>{% block title %}CSFTK{% endblock %}</title>
+
+
+        {% block stylesheets %}{% endblock %}
+
+        <link href="{{ asset('bundles/centre/css/bootstrap-3.1.1.min.css')}}" rel='stylesheet' type='text/css' />
+        <!-- Custom Theme files -->
+        <link href="{{ asset('bundles/centre/css/style.css')}}" rel='stylesheet' type='text/css' />
+
+        <!--webfont-->
+        <!-- FlexSlider -->
+        <link href="{{ asset('bundles/centre/css/flexslider.css')}}" rel='stylesheet' type='text/css' />
+        <!--fin flexsLIDER APPELLE-->
+
+        <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="{{ asset('bundles/centre/css/font-awesome.css')}}" rel="stylesheet">
+        <link href="{{ asset('bundles/centre/css/registre.min.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('bundles/centre/css/chocolat.css')}}" type="text/css" media="screen" charset="utf-8" />
+        <link href="{{ asset('bundles/centre/css/jquery.uls.css')}}" rel="stylesheet"/>
+        <link href="{{ asset('bundles/centre/css/jquery.uls.grid.css')}}" rel="stylesheet"/>
+        <link href="{{ asset('bundles/centre/css/jquery.uls.lcd.css')}}" rel="stylesheet"/>
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+<body>
+
+<?php
+$nom=1;
+
+?>
+<!--header menu-->
+<div class="header">
+    <div class="container">
+        <div class="col-sm-3 logo">
+            <h1><a href="#"><img src="{{ asset('bundles/centre/images/logo_centre.png')}}" class="img-responsive" alt="" /></a></h1>
+        </div>
+        <div class="col-sm-9 logo_right">
+            <div class="social">
+                <a href="" class="link facebook" target="_parent"><span class="fa fa-facebook"></span></a>
+                <a href="" class="link twitter" target="_parent"><span class="fa fa-twitter"></span></a>
+                <a href="" class="link google" target="_parent"><span class="fa fa-google-plus"></span></a>
+                <a href="" class="link google" target="_parent"><span class="fa fa-linkedin"></span></a>
+                <a href="" class="link google" target="_parent"><span class="fa fa-tumblr"></span></a>
+            </div>
+            <!-- script for menu -->
+            <span class="menu"></span>
+            <div class="top-menu">
+                <ul>
+
+                    <li><a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
+                    <li><a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Register</a></li>
+
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+            <!-- Modal -->
+            <div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog_2">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                <div class="head_4">
+
+                                    <p>Login</p>
+                                </div>
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="register">
+                                <div class="section">
+                                    <label for="username" class="field prepend-icon">
+                                        <input type="text" name="username" id="username" placeholder="Username">
+                                        <label for="username" class="field-icon">
+                                            <i class="fa fa-user"></i>
+                                        </label>
+                                    </label>
+                                </div>
+                                <div class="section">
+                                    <label for="password" class="field prepend-icon">
+                                        <input type="password" name="password" id="password" placeholder="Password">
+                                        <label for="password" class="field-icon">
+                                            <i class="fa fa-lock"></i>
+                                        </label>
+                                    </label>
+                                </div>
+                                <div class="section">
+                                    <div class="submit"><input type="submit" onclick="myFunction()" value="Login"></div>
+                                </div>
+                                <ul class="new">
+                                    <li class="new_left"><p><a href="#">Forgot Password ?</a></p></li>
+                                    <li class="new_right"><p class="sign">New here ?&nbsp;&nbsp;<a href="#" data-toggle="modal" data-target="#applyModal_1">Sign Up</a></p></li>
+                                    <div class="clearfix"></div>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="applyModal_1" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+                <div class="modal-dialog dialog_3">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <h4 class="modal-title" id="myModalLabel"><div class="head_4">
+                                    <p>Register</p>
+                                </div></h4>
+                        </div>
+                        <form name="row" method="post" class="register">
+                            <div class="radio radio_1">
+                                <input id="leader" type="radio" value="1">
+                                <label for="leader">Leader</label>
+                                <input id="company" type="radio" value="2">
+                                <label for="company">Company</label>
+                                <input id="trainer" type="radio" value="3">
+                                <label for="trainer">Trainer</label>
+                                <input id="software developer" type="radio" value="4">
+                                <label for="software developer">Software Developer</label>
+                                <input id="product supplier" type="radio" value="5">
+                                <label for="product supplier">Product Supplier</label>
+                                <input id="consultant" type="radio" value="6">
+                                <label for="consultant">Consultant</label>
+                                <input id="employee" type="radio" value="7">
+                                <label for="employee">Employee</label>
+                            </div>
+                            <div class="section">
+                                <label for="username" class="field prepend-icon">
+                                    <input type="text" name="email id" id="Email id" placeholder="Email id">
+                                    <label for="email id" class="field-icon">
+                                        <i class="fa fa-user"></i>
+                                    </label>
+                                </label>
+                            </div>
+                            <div class="section">
+                                <label for="password" class="field prepend-icon">
+                                    <input type="password" name="password" id="password" placeholder="Password">
+                                    <label for="password" class="field-icon">
+                                        <i class="fa fa-lock"></i>
+                                    </label>
+                                </label>
+                            </div>
+                            <div class="section">
+                                <label for="username" class="field prepend-icon">
+                                    <input type="text" name="mobile number" id="Mobile Number" placeholder="Mobile Number">
+                                    <label for="mobile number" class="field-icon">
+                                        <i class="fa fa-phone"></i>
+                                    </label>
+                                </label>
+                            </div>
+                            <div class="section">
+                                <label for="name" class="field prepend-icon">
+                                    <select path="country" id="country" class="form-control input-sm">
+                                        <option value="">Select Country</option>
+                                        <option value="">Japan</option>
+                                        <option value="">Kenya</option>
+                                        <option value="">Dubai</option>
+                                        <option value="">Italy</option>
+                                        <option value="">Greece</option>
+                                        <option value="">Iceland</option>
+                                        <option value="">China</option>
+                                        <option value="">Doha</option>
+                                        <option value="">Irland</option>
+                                        <option value="">Srilanka</option>
+                                        <option value="">Russia</option>
+                                        <option value="">Hong Kong</option>
+                                        <option value="">Germany</option>
+                                        <option value="">Canada</option>
+                                        <option value="">Mexico</option>
+                                        <option value="">Nepal</option>
+                                        <option value="">Norway</option>
+                                        <option value="">Oman</option>
+                                        <option value="">Pakistan</option>
+                                        <option value="">Kuwait</option>
+                                        <option value="">Indonesia</option>
+                                        <option value="">Spain</option>
+                                        <option value="">Thailand</option>
+                                        <option value="">Saudi Arabia</option>
+                                        <option value="">Poland</option>
+                                    </select>
+                                    <label for="name" class="field-icon">
+                                        <i class="fa fa-user"></i>
+                                    </label>
+                                </label>
+                            </div>
+                            <div class="section">
+                                <label for="name" class="field prepend-icon">
+                                    <select path="country" id="country" class="form-control input-sm">
+                                        <option value="">Select State</option>
+                                    </select>
+                                    <label for="name" class="field-icon">
+                                        <i class="fa fa-user"></i>
+                                    </label>
+                                </label>
+                            </div>
+                            <div class="section">
+                                <label for="name" class="field prepend-icon">
+                                    <select path="country" id="country" class="form-control input-sm">
+                                        <option value="">Select City</option>
+                                    </select>
+                                    <label for="name" class="field-icon">
+                                        <i class="fa fa-user"></i>
+                                    </label>
+                                </label>
+                            </div>
+                            <div class="section">
+                                <div class="submit"><input type="submit" onclick="myFunction()" value="Register"></div>
+                            </div>
+                            <div class="checkbox check_1">
+                                <input id="check1" type="checkbox" name="check" value="check1">
+                                <label for="check1">I agree to the Terms of Service and Privacy Policy</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--/header menu-->
+
+<!--menu-->
+
+<nav class="navbar nav_bottom" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header nav_2">
+            <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">Menu
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+            <ul class="nav navbar-nav nav_1">
+                <li ><a href="">Accueil</a></li>
+                <li><a href="#">Présentation CSFTK</a></li>
+
+                <li><a href="#">Préinscription</a></li>
+
+                <li><a href="#">espace membre</a></li>
+                <li><a href="#">Entreprise</a></li>
+                <li ><a href="#">document administratif</a></li>
+                <li><a href="#">Contact</a></li>
+
+
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!--menu-->
+<div class="demo">
+    <marquee behavior="scroll" style="background:#fafbff; color:rgb(8, 109, 54);;" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+        دورة فيفري 2016 INSCRIPTION ou Facebook أنظر Session février 2016
+    </marquee>
+</div>
+
+
+
+
+{% block body %}
+{% endblock %}
+
+
+
+<div class="footer_widget">
+    <div class="container">
+        <div class="col-md-4">
+            <aside id="text-1" class="widget widget_text">
+                <h3 class="widget-title"><span>COME VISIT US</span></h3>
+                <div class="textwidget"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                    <p><em style="color: #fff;">standard chunk.,<br> Finibus Bonorum,<br> Ipsum generators, treatise</em></p>
+                </div>
+            </aside>
+        </div>
+        <div class="col-md-4">
+            <aside id="text-2" class="widget widget_text">
+                <h3 class="widget-title"><span>MORE ABOUT US</span></h3>
+                <div class="textwidget">
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum,.</p></div>
+            </aside>
+        </div>
+        <div class="col-md-4">
+            <aside>
+                <h3 class="widget-title"><span>FLICKR FEED</span></h3>
+                <ul class="gallery">
+                    <li><a href="#" class="img-responsive" title="Rose" rel="title1">
+                            <img src="#" class="img-responsive" alt="name">
+                        </a>
+                    </li>
+                    <li><a href="#" class="img-responsive" title="Rose" rel="title1">
+                            <img src="#" class="img-responsive" alt="name">
+                        </a>
+                    </li>
+                    <li><a href="#" class="img-responsive" title="Rose" rel="title1">
+                            <img src="#" class="img-responsive" alt="name">
+                        </a>
+                    </li>
+                    <li class="last">
+                        <a href="#" class="img-responsive" title="Rose" rel="title1">
+                            <img src="#" class="img-responsive" alt="name">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="i#" class="img-responsive" title="Rose" rel="title1">
+                            <img src="#" class="img-responsive" alt="name">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="img-responsive" title="Rose" rel="title1">
+                            <img src="#" class="img-responsive" alt="name">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/pic11.jpg" class="img-responsive" title="Rose" rel="title1">
+                            <img src="images/pic11.jpg" class="img-responsive" alt="name">
+                        </a>
+                    </li>
+                    <li class="last">
+                        <a href="images/pic12.jpg" class="img-responsive" title="Rose" rel="title1">
+                            <img src="images/pic12.jpg" class="img-responsive" alt="name">
+                        </a>
+                    </li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</div>
+<div class="footer_middle">
+    <div class="container">
+        <div class="col-sm-7">
+            <div class="footer-icons">
+                <a href="#" class="social-icon"><i class="fa fa-twitter has-circle"></i></a>
+                <a href="#" class="social-icon"><i class="fa fa-facebook has-circle"></i></a>
+                <a href="#" class="social-icon"><i class="fa fa-google-plus has-circle"></i></a>
+                <a href="#" class="social-icon"><i class="fa fa-linkedin has-circle"></i></a>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="newsletter_signup">
+                <form novalidate="" target="_blank" name="newsletter-subscribe-form" id="newsletter-subscribe-form" method="post" class="form-inline validate">
+                    <input type="email" required="" placeholder="Subscribe to our newsletter" class="form-control" name="EMAIL" value="">
+                    <input type="submit" id="newsletter-subscribe" name="subscribe" value="SUBSCRIBE">
+                </form>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div class="footer_bottom">
+    <div class="container">
+        <div class="copy">
+            <p>Copyright © 2016 Community. All Rights Reserved | Design by <a href="#" target="_blank">Ben sassi taher</a> </p>
+        </div>
+    </div>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;">Top </span></a>
+
+</div>
+
+{% block javascripts %}{% endblock %}
+
+<script src="{{ asset('bundles/centre/js/jquery.min.js')}}"></script>
+<script src="{{ asset('bundles/centre/js/bootstrap.min.js')}}"></script>
+
+<script src="{{ asset('bundles/centre/js/top.js')}}"></script>
+<script   src="{{ asset('bundles/centre/js/inc.js')}}" ></script>
+
+
+<script defer src="{{ asset('bundles/centre/js/jquery.flexslider.js')}}"></script>
+<script src="{{ asset('bundles/centre/js/js7.js')}}"></script>
+
+<script src="{{ asset('bundles/centre/js/js5.js')}}"></script>
+<!--langue-->
+<script type="text/javascript" src="{{ asset('bundles/centre/js/jquery.leanModal.min.js')}}"></script>
+
+<script src="{{ asset('bundles/centre/js/jquery.uls.data.js')}}"></script>
+<script src="{{ asset('bundles/centre/js/jquery.uls.data.utils.js')}}"></script>
+<script src="{{ asset('bundles/centre/js/jquery.uls.lcd.js')}}"></script>
+
+<script src="{{ asset('bundles/centre/js/jquery.uls.regionfilter.js')}}"></script>
+<script src="{{ asset('bundles/centre/js/jquery.uls.core.js')}}"></script>
+
+<script src="{{ asset('bundles/centre/js/JS1.js')}}" type="application/x-javascript"></script>
+<script src="{{ asset('bundles/centre/js/js2(header).js')}}"></script>
+<script src="{{ asset('bundles/centre/js/js3.js')}}" type="text/javascript" charset="utf-8"></script>
+
+<!--top-->
+<script type="text/javascript" src="{{ asset('bundles/centre/js/move-top.js')}}"></script>
+<script type="text/javascript" src="{{ asset('bundles/centre/js/easing.js')}}"></script>
+<!--top-->
+
+<script src="{{ asset('bundles/centre/js/js6.js')}}"></script>
+
+
+
+
+
+
+</body>
+
+</html>

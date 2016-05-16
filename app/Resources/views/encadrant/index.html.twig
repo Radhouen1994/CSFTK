@@ -1,0 +1,47 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-8 col-lg-offset-1">
+    <h1>Encadrant list</h1>
+
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Cin</th>
+                <th>Tel</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for encadrant in encadrants %}
+            <tr>
+                <td>{{ encadrant.nom }}</td>
+                <td>{{ encadrant.prenom }}</td>
+                <td>{{ encadrant.cin }}</td>
+                <td>{{ encadrant.tel }}</td>
+                <td>{{ encadrant.email }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('encadrant_show', { 'id': encadrant.idencadrant }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('encadrant_edit', { 'id': encadrant.idencadrant }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('encadrant_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-8 col-lg-offset-1">
+    <h1>Formateur list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Cin</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formateur in formateurs %}
+            <tr>
+                <td>{{ formateur.nom }}</td>
+                <td>{{ formateur.prenom }}</td>
+                <td>{{ formateur.cin }}</td>
+                <td>{{ formateur.email }}</td>
+                <td>{{ formateur.role }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('formateur_show', { 'id': formateur.idformateur }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('formateur_edit', { 'id': formateur.idformateur }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('formateur_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

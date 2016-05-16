@@ -1,0 +1,45 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>Actualite list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Date</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actualite in actualites %}
+            <tr>
+                <td>{{ actualite.titre }}</td>
+                <td>{{ actualite.contenu }}</td>
+                <td>{% if actualite.date %}{{ actualite.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ actualite.photo }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('actualite_show', { 'id': actualite.idactualite }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('actualite_edit', { 'id': actualite.idactualite }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('actualite_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

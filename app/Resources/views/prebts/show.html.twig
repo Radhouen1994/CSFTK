@@ -1,0 +1,90 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div class="col-lg-6 col-lg-offset-1">
+    <h1>Prebts</h1>
+
+    <table class="table table-responsive">
+        <tbody>
+            <tr>
+                <th>Numdossier</th>
+                <td>{{ prebts.numdossier }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ prebts.cin }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ prebts.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ prebts.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Datenaiss</th>
+                <td>{% if prebts.dateNaiss %}{{ prebts.dateNaiss|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ prebts.ville }}</td>
+            </tr>
+            <tr>
+                <th>Region</th>
+                <td>{{ prebts.region }}</td>
+            </tr>
+            <tr>
+                <th>Numtel</th>
+                <td>{{ prebts.numtel }}</td>
+            </tr>
+            <tr>
+                <th>Section</th>
+                <td>{{ prebts.section }}</td>
+            </tr>
+            <tr>
+                <th>Moyenne</th>
+                <td>{{ prebts.moyenne }}</td>
+            </tr>
+            <tr>
+                <th>Math</th>
+                <td>{{ prebts.math }}</td>
+            </tr>
+            <tr>
+                <th>Physique</th>
+                <td>{{ prebts.physique }}</td>
+            </tr>
+            <tr>
+                <th>Francais</th>
+                <td>{{ prebts.francais }}</td>
+            </tr>
+            <tr>
+                <th>Anglais</th>
+                <td>{{ prebts.anglais }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ prebts.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ prebts.email }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ prebts.etat }}</td>
+            </tr>
+            <tr>
+                <th>Specialite</th>
+                <td>{{ prebts.specialite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('prebts_index') }}">Back to the list</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

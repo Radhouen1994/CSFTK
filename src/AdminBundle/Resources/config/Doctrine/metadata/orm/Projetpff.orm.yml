@@ -1,0 +1,111 @@
+Projetpff:
+    type: entity
+    table: projetpff
+    indexes:
+        fk_Projetpff_societepff1_idx:
+            columns:
+                - societepff_idtable1
+        fk_Projetpff_encadrant1_idx:
+            columns:
+                - encadrant_idEncadrant
+        fk_Projetpff_stagiaiarebts1_idx:
+            columns:
+                - stagiaiarebts_idStagiaiareBTP
+    id:
+        iddescriptionpff:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idDescriptionPff
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        proposition:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+            column: Proposition
+        resultat:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+            column: Resultat
+        structure:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+            column: Structure
+        outils:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+            column: Outils
+        documentation:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+            column: Documentation
+        materiel:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+            column: Materiel
+        remarque:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+            column: Remarque
+    manyToOne:
+        stagiaiarebtsstagiaiarebtp:
+            targetEntity: Stagiaiarebts
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                stagiaiarebts_idStagiaiareBTP:
+                    referencedColumnName: idStagiaiareBTS
+            orphanRemoval: false
+        encadrantencadrant:
+            targetEntity: Encadrant
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                encadrant_idEncadrant:
+                    referencedColumnName: idEncadrant
+            orphanRemoval: false
+        societepfftable1:
+            targetEntity: Societepff
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                societepff_idtable1:
+                    referencedColumnName: idtable1
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,47 @@
+admin_formateur:
+    resource: "@AdminBundle/Resources/config/routing/formateur.yml"
+    prefix:   /Admin/formateur
+admin_encadrant:
+    resource: "@AdminBundle/Resources/config/routing/encadrant.yml"
+    prefix:   /Admin/encadrant
+admin_stagiaiarebtp:
+    resource: "@AdminBundle/Resources/config/routing/stagiaiarebtp.yml"
+    prefix:   /Admin/stagiaiarebtp
+admin_stagiaiarebts:
+    resource: "@AdminBundle/Resources/config/routing/stagiaiarebts.yml"
+    prefix:   /Admin/stagiaiarebts
+admin_groupe:
+    resource: "@AdminBundle/Resources/config/routing/groupe.yml"
+    prefix:   /Admin/groupe
+admin_Actu_Stagiaire:
+    resource: "@AdminBundle/Resources/config/routing/actualitestagiaire.yml"
+    prefix:   /Admin/actualitestagiaire
+admin_Event:
+    resource: "@AdminBundle/Resources/config/routing/evenement.yml"
+    prefix:   /Admin/evenement
+admin_OffreStage:
+    resource: "@AdminBundle/Resources/config/routing/offrestage.yml"
+    prefix:   /Admin/offrestage
+admin_verifinscri:
+    resource: "@AdminBundle/Resources/config/routing/verifinscri.yml"
+    prefix:   /Admin/verifinscri
+admin_documentadministratif:
+    resource: "@AdminBundle/Resources/config/routing/documentadministratif.yml"
+    prefix:   /Admin/documentadministratif
+admin_prebtp:
+    resource: "@AdminBundle/Resources/config/routing/prebtp.yml"
+    prefix:   /Admin/prebtp
+admin_prebts:
+    resource: "@AdminBundle/Resources/config/routing/prebts.yml"
+    prefix:   /Admin/prebts
+admin_filiere:
+    resource: "@AdminBundle/Resources/config/routing/filiere.yml"
+    prefix:   /Admin/filiere
+admin_actualite:
+    resource: "@AdminBundle/Resources/config/routing/actualite.yml"
+    prefix:   /Admin/actualite
+
+test:
+    path:  /Admin/test
+    defaults: { _controller: AdminBundle:Default:index}
+

@@ -1,0 +1,60 @@
+Responsablepff:
+    type: entity
+    table: responsablepff
+    indexes:
+        fk_responsablepff_societepff1_idx:
+            columns:
+                - societepff_idtable1
+    id:
+        idresponsablepff:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idResponsablePff
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        prenom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        tel:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        fonction:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    manyToOne:
+        societepfftable1:
+            targetEntity: Societepff
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                societepff_idtable1:
+                    referencedColumnName: idtable1
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

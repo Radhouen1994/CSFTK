@@ -1,0 +1,54 @@
+Cours:
+    type: entity
+    table: cours
+    indexes:
+        fk_cours_formateur1_idx:
+            columns:
+                - formateur_idformateur
+    id:
+        idcours:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        specialite:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        pathcours:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: pathCours
+        anne:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    manyToOne:
+        formateurformateur:
+            targetEntity: Formateur
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                formateur_idformateur:
+                    referencedColumnName: idformateur
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

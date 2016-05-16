@@ -1,0 +1,100 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div class="col-lg-6 col-lg-offset-1">
+    <h1>Liste Candidats BTS</h1>
+
+    <table class="table table-responsive">
+        <thead class="table">
+            <tr>
+                <th>Numdossier</th>
+                <th>Cin</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <!--  <th>Datenaiss</th>
+                <th>Ville</th>
+                <th>Region</th>
+                <th>Numtel</th>
+                <th>Section</th>
+                <th>Moyenne</th>
+                <th>Math</th>
+                <th>Physique</th>
+                <th>Francais</th>
+                <th>Anglais</th>
+                <th>Sexe</th>
+                <th>Email</th>
+                <th>Etat</th>
+                <th>Specialite</th>-->
+                <th>Actions</th>
+                <th>Groupe</th>
+                <th>Valider</th>
+                <th>Suprimmer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prebts in prebts %}
+            <tr>
+                <td>{{ prebts.numdossier }}</td>
+                <td>{{ prebts.cin }}</td>
+                <td>{{ prebts.nom }}</td>
+                <td>{{ prebts.prenom }}</td>
+                <!--     <td>{% if prebts.dateNaiss %}{{ prebts.dateNaiss|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ prebts.ville }}</td>
+                <td>{{ prebts.region }}</td>
+                <td>{{ prebts.numtel }}</td>
+                <td>{{ prebts.section }}</td>
+                <td>{{ prebts.moyenne }}</td>
+                <td>{{ prebts.math }}</td>
+                <td>{{ prebts.physique }}</td>
+                <td>{{ prebts.francais }}</td>
+                <td>{{ prebts.anglais }}</td>
+                <td>{{ prebts.sexe }}</td>
+                <td>{{ prebts.email }}</td>
+                <td>{{ prebts.etat }}</td>
+                <td>{{ prebts.specialite }}</td>-->
+
+
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('prebts_show', { 'id': prebts.idprebts }) }}" class="btn btn-xs btn-primary">show</a>
+                        </li>
+                    </ul>
+                </td>
+                  <form action="{{ path('prebts_Validate', {'id':prebts.idprebts }) }}" method="post">
+                <td>
+
+
+                        <select class="form-control"  name="groupe" >
+                            {% for grp in grp  %}
+                               <h3> {{ grp.idgroupe }}</h3>
+                                <option value="{{ grp.idgroupe }}">{{ grp.nom }}</option>
+
+                            {% endfor %}
+                        </select>
+
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <input type="submit" name="Ok" value="Valider" class="btn btn-md btn-success">
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('prebts_Delete', { 'id': prebts.idprebts }) }}" class="btn btn-xs btn-danger">Delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            </form>
+
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    
+{% endblock %}

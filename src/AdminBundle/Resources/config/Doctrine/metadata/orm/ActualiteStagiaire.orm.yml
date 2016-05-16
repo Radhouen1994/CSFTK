@@ -1,0 +1,27 @@
+ActualiteStagiaire:
+    type: entity
+    table: actualite_stagiaire
+    id:
+        idactualiteStagiaire:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idActualite_Stagiaire
+            generator:
+                strategy: IDENTITY
+    fields:
+        titre:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        contenu:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

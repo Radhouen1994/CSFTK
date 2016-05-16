@@ -1,0 +1,24 @@
+filiere_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:filiere:index" }
+    methods:  GET
+
+filiere_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:filiere:show" }
+    methods:  GET
+
+filiere_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:filiere:new" }
+    methods:  [GET, POST]
+
+filiere_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:filiere:edit" }
+    methods:  [GET, POST]
+
+filiere_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:filiere:delete" }
+    methods:  DELETE

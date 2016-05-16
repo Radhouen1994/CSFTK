@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1" >
+    <h1>ActualiteStagiaire list</h1>
+
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actualiteStagiaire in actualiteStagiaires %}
+            <tr>
+                <td>{{ actualiteStagiaire.titre }}</td>
+                <td>{{ actualiteStagiaire.contenu }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('actualitestagiaire_show', { 'id': actualiteStagiaire.idactualiteStagiaire }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('actualitestagiaire_edit', { 'id': actualiteStagiaire.idactualiteStagiaire }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('actualitestagiaire_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

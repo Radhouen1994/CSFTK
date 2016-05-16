@@ -1,0 +1,34 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1" >
+    <h1>ActualiteStagiaire</h1>
+
+    <table class="table table-responsive"   >
+        <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ actualiteStagiaire.titre }}</td>
+            </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>{{ actualiteStagiaire.contenu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('actualitestagiaire_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('actualitestagiaire_edit', { 'id': actualiteStagiaire.idactualiteStagiaire }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-md btn-danger" style="float: right;" />
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+OffreStage:
+    type: entity
+    table: offre_stage
+    id:
+        idoffreStage:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: idoffre_stage
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        contenu:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+        photo:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        adresse:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

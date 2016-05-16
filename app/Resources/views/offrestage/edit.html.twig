@@ -1,0 +1,26 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    {% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>OffreStage edit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" class="btn btn-md btn-primary" style="float: right;" />
+    {{ form_end(edit_form) }}
+
+    {{ form_start(delete_form) }}
+    <input type="submit" value="Delete" class="btn btn-md btn-danger" style="float: right; margin-right: 10px;" >
+    {{ form_end(delete_form) }}
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('offrestage_index') }}">Back to the list</a>
+        </li>
+        <li>
+
+        </li>
+    </ul>
+    </div>
+{% endblock %}

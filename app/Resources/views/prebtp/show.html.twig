@@ -1,0 +1,94 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div class="col-lg-6 col-lg-offset-1">
+    <h1>Prebtp</h1>
+
+    <table class="table table-responsive">
+        <tbody>
+            <tr>
+                <th>Numdossier</th>
+                <td>{{ prebtp.numdossier }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ prebtp.cin }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ prebtp.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ prebtp.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Datenaiss</th>
+                <td>{% if prebtp.dateNaiss %}{{ prebtp.dateNaiss|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ prebtp.ville }}</td>
+            </tr>
+            <tr>
+                <th>Region</th>
+                <td>{{ prebtp.region }}</td>
+            </tr>
+            <tr>
+                <th>Numtel</th>
+                <td>{{ prebtp.numtel }}</td>
+            </tr>
+            <tr>
+                <th>Section</th>
+                <td>{{ prebtp.section }}</td>
+            </tr>
+            <tr>
+                <th>Moyenne</th>
+                <td>{{ prebtp.moyenne }}</td>
+            </tr>
+            <tr>
+                <th>Math</th>
+                <td>{{ prebtp.math }}</td>
+            </tr>
+            <tr>
+                <th>Physique</th>
+                <td>{{ prebtp.physique }}</td>
+            </tr>
+            <tr>
+                <th>Francais</th>
+                <td>{{ prebtp.francais }}</td>
+            </tr>
+            <tr>
+                <th>Anglais</th>
+                <td>{{ prebtp.anglais }}</td>
+            </tr>
+            <tr>
+                <th>Typeedu</th>
+                <td>{{ prebtp.typeedu }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ prebtp.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ prebtp.email }}</td>
+            </tr>
+            <tr>
+                <th>Datedebprive</th>
+                <td>{% if prebtp.dateDebPrive %}{{ prebtp.dateDebPrive|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ prebtp.etat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('prebtp_index') }}">Back to the list</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

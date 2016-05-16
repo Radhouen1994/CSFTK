@@ -1,0 +1,24 @@
+actualitestagiaire_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:ActualiteStagiaire:index" }
+    methods:  GET
+
+actualitestagiaire_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:ActualiteStagiaire:show" }
+    methods:  GET
+
+actualitestagiaire_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:ActualiteStagiaire:new" }
+    methods:  [GET, POST]
+
+actualitestagiaire_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:ActualiteStagiaire:edit" }
+    methods:  [GET, POST]
+
+actualitestagiaire_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:ActualiteStagiaire:delete" }
+    methods:  DELETE
