@@ -31,4 +31,9 @@ Session:
             type: date
             nullable: true
             column: dateFin
+        etat:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
     lifecycleCallbacks: {  }

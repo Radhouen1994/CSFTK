@@ -77,6 +77,7 @@
                         <li><a href="{{ path('prebts_index') }}">BTS</a></li>
                         <li><a href="{{ path('prebtp_index') }}">BTP</a></li>
                         <li><a href="{{ path('verifinscri_index') }}">Ajouter Pre-Inscription</a></li>
+                        <li><a href="{{ path('session_index') }}">Ajouter Session</a></li>
                     </ul>
                 </li>
 
@@ -107,7 +108,13 @@
 <script src="{{ asset('bundles/admin/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('bundles/admin/js/holder.js') }}"></script>
 <script src="{{ asset('bundles/admin/js/ie10-viewport-bug-workaround.js') }}"></script>
+<script src="{{asset('bundles/admin/js/temps.js')}}"></script>
 
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
 
 </body>
 </html>

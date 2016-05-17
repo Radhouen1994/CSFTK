@@ -49,6 +49,13 @@ class Session
      */
     private $datefin;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="etat", type="integer", nullable=true)
+     */
+    private $etat;
+
 
 
     /**
@@ -155,5 +162,29 @@ class Session
     public function getDatefin()
     {
         return $this->datefin;
+    }
+
+    /**
+     * Set etat
+     *
+     * @param integer $etat
+     *
+     * @return Session
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+
+        return $this;
+    }
+
+    /**
+     * Get etat
+     *
+     * @return integer
+     */
+    public function getEtat()
+    {
+        return $this->etat;
     }
 }
