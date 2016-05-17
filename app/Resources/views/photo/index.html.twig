@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="col-lg-6 col-lg-offset-1">
+    <h1>Photo list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Path</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for photo in photos %}
+            <tr>
+                <td>{{ photo.titre }}</td>
+                <td>{{ photo.path }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('Admin_photo_show', { 'id': photo.idphoto }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('Admin_photo_edit', { 'id': photo.idphoto }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('Admin_photo_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends '::admin.html.twig' %}
+
+{% block body %}
+<div class="col-lg-6 col-lg-offset-1" style="overflow-x: auto;">
+    <h1>Photo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idphoto</th>
+                <td>{{ photo.idphoto }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ photo.titre }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ photo.path }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('Admin_photo_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('Admin_photo_edit', { 'id': photo.idphoto }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-md btn-danger">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+</div>
+{% endblock %}
