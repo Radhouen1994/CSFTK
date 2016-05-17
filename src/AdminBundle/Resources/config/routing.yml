@@ -16,6 +16,9 @@ admin_groupe:
 admin_Actu_Stagiaire:
     resource: "@AdminBundle/Resources/config/routing/actualitestagiaire.yml"
     prefix:   /Admin/actualitestagiaire
+admin_Admin_photo:
+    resource: "@AdminBundle/Resources/config/routing/photo.yml"
+    prefix:   /Admin/photo
 admin_Event:
     resource: "@AdminBundle/Resources/config/routing/evenement.yml"
     prefix:   /Admin/evenement
