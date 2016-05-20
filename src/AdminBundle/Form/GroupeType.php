@@ -24,9 +24,9 @@ class GroupeType extends AbstractType
                     'TSIRA' => 'TSIRA',
                     'TSMM' => 'TSMM',
                 )))
-            ->add('emploi',FileType::class,array('data_class'=>null))
+            ->add('emploi',FileType::class,array('multiple'=>true,'data_class'=>null))
             ->add('cal',FileType::class,array('data_class'=>null,'label'=>'Calendrier'))
-            ->add('path',FileType::class,array('data_class'=>null,'label'=>'path'))
+          //  ->add('path',FileType::class,array('data_class'=>null,'label'=>'path'))
         ;
     }
     

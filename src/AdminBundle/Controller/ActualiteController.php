@@ -41,6 +41,7 @@ class ActualiteController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $actualite->upload();
             $em->persist($actualite);
             $em->flush();
 
@@ -79,6 +80,7 @@ class ActualiteController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $actualite->upload();
             $em->persist($actualite);
             $em->flush();
 

@@ -35,6 +35,13 @@ class Filiere
      */
     private $prog;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
 
 
     /**
@@ -93,5 +100,29 @@ class Filiere
     public function getProg()
     {
         return $this->prog;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Filiere
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

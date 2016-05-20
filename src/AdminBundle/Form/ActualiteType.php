@@ -2,6 +2,7 @@
 
 namespace AdminBundle\Form;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -21,7 +22,7 @@ class ActualiteType extends AbstractType
     {
         $builder
             ->add('titre',TextType::class)
-            ->add('contenu',TextareaType::class)
+            ->add('contenu',CKEditorType::class)
             ->add('date', DateType::class)
             ->add('photo',FileType::class ,array('data_class'=>null))
         ;

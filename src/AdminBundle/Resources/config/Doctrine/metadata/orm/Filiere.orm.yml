@@ -23,4 +23,10 @@ Filiere:
             length: 45
             options:
                 fixed: false
+        description:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
     lifecycleCallbacks: {  }

@@ -18,7 +18,7 @@
             <tr>
                 <td>{{ offreStage.nom }}</td>
                 <td>{{ offreStage.contenu }}</td>
-                <td>{{ offreStage.photo }}</td>
+                <td><img src="{{asset('bundles/admin/Offre/uploads/')~offreStage.photo }}" height="50" width="50"/></td>
                 <td>
                     <ul class="list-unstyled">
                         <li>

@@ -156,4 +156,17 @@ class Actualite
     {
         return $this->photo;
     }
+
+    public function getUploadDir()
+{
+
+    return __DIR__."../../../../web/bundles/admin/Actualite/uploads";
+
+}
+    public function upload()
+    {
+
+        $this->photo->move($this->getUploadDir(),$this->photo->getClientOriginalName());
+        $this->photo=$this->photo->getClientOriginalName();
+    }
 }

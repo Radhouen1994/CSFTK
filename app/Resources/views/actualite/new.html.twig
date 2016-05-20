@@ -1,7 +1,7 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <div class="col-lg-6 col-md-offset-1" >
+    <div class="col-lg-8 col-md-offset-1" >
     <h1>Actualite creation</h1>
     {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
     {{ form_start(form) }}
@@ -9,8 +9,8 @@
         <input type="submit" class="btn btn-md btn-primary" value="Create" style="float:right;" />
     {{ form_end(form) }}
 
-    <ul>
-        <li class="list-unstyled">
+    <ul class="list-unstyled">
+        <li>
             <a class="link" href="{{ path('actualite_index') }}">Back to the list</a>
         </li>
     </ul>

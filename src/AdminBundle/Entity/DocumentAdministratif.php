@@ -94,4 +94,18 @@ class DocumentAdministratif
     {
         return $this->path;
     }
+
+    public function getUploadDir()
+    {
+
+        return __DIR__."../../../../web/bundles/admin/Galerie_photo/uploads";
+
+    }
+
+    public function upload()
+    {
+
+        $this->path->move($this->getUploadDir(),$this->path->getClientOriginalName());
+        $this->path=$this->path->getClientOriginalName();
+    }
 }

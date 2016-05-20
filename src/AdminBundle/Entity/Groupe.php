@@ -3,6 +3,7 @@
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Groupe
@@ -26,6 +27,7 @@ class Groupe
      *
      * @ORM\Column(name="nom", type="string", length=45, nullable=true)
      */
+
     private $nom;
 
     /**
@@ -187,4 +189,22 @@ class Groupe
     {
         return $this->path;
     }
+
+    public function getUploadDir()
+    {
+
+        return __DIR__."../../../../web/bundles/admin/Groupe/Calendrier/uploads";
+
+    }
+
+    public function upload()
+    {
+        $file=array($this->getEmploi(),$this->getCal());
+        $this->cal->move($this->getUploadDir(),$this->cal->getClientOriginalName());
+        $this->cal=$this->cal->getClientOriginalName();
+    }
+
+
+
+
 }

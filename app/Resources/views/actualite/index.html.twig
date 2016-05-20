@@ -20,7 +20,7 @@
                 <td>{{ actualite.titre }}</td>
                 <td>{{ actualite.contenu }}</td>
                 <td>{% if actualite.date %}{{ actualite.date|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ actualite.photo }}</td>
+                <td><img src="{{ asset('bundles/admin/Actualite/uploads/'~actualite.photo)}}" width="50" height="50"/></td>
                 <td>
                     <ul class="list-unstyled">
                         <li>

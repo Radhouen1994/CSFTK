@@ -41,6 +41,7 @@ class GroupeController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $groupe->upload();
             $em->persist($groupe);
             $em->flush();
 
@@ -79,6 +80,7 @@ class GroupeController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $groupe->upload();
             $em->persist($groupe);
             $em->flush();
 

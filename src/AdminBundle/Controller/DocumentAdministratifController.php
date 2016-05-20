@@ -41,6 +41,7 @@ class DocumentAdministratifController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $documentAdministratif->upload();
             $em->persist($documentAdministratif);
             $em->flush();
 
@@ -79,6 +80,7 @@ class DocumentAdministratifController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $documentAdministratif->upload();
             $em->persist($documentAdministratif);
             $em->flush();
 

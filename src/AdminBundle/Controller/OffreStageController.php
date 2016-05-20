@@ -41,6 +41,7 @@ class OffreStageController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $offreStage->upload();
             $em->persist($offreStage);
             $em->flush();
 
@@ -79,6 +80,7 @@ class OffreStageController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $offreStage->upload();
             $em->persist($offreStage);
             $em->flush();
 

@@ -21,10 +21,16 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('bundles/admin/css/dashbord.css')}}" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="{{ asset('bundles/admin/css/font-awsome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/admin/css/daterangepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/admin/css/datatable.css') }}">
+    <link href="{{ asset('bundles/admin/css/bootstrap-edittable.css') }}" rel="stylesheet"/>
+
     <link href="{{ asset('bundles/admin/css/style.css') }}"  rel="stylesheet">
 
-
     {% block stylesheets %}{% endblock %}
+
 </head>
 
 <body>
@@ -103,12 +109,18 @@
 
 
 {% block javascripts %}{% endblock %}
+<script src="{{ asset('bundles/admin/js/datatable.min.js') }}"></script>
 <script src="{{ asset('bundles/admin/js/jquery.min.js') }}"></script>
 <script src="{{ asset('bundles/admin/js/jquery.script.js') }}"></script>
 <script src="{{ asset('bundles/admin/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('bundles/admin/js/holder.js') }}"></script>
 <script src="{{ asset('bundles/admin/js/ie10-viewport-bug-workaround.js') }}"></script>
 <script src="{{asset('bundles/admin/js/temps.js')}}"></script>
+<script src="{{ asset('bundles/admin/js/Moment.js') }}"></script>
+<script src="{{ asset('bundles/admin/js/daterangerpicker.js') }}"></script>
+<script src="{{ asset('bundles/admin/js/edittable.min.js') }}"></script>
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
 
 <script>
     $(document).ready(function() {

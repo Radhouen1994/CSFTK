@@ -4,6 +4,7 @@ namespace AdminBundle\Form;
 
 use Doctrine\DBAL\Types\TextType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +19,8 @@ class filiereType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('prog',TextareaType::class)
+            ->add('description',TextareaType::class)
+            ->add('prog',FileType::class,array('data_class'=>null))
         ;
     }
     

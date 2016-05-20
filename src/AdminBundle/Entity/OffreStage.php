@@ -156,4 +156,17 @@ class OffreStage
     {
         return $this->adresse;
     }
+
+    public function getUploadDir()
+    {
+
+        return __DIR__."../../../../web/bundles/admin/Offre/uploads";
+
+    }
+    public function upload()
+    {
+
+        $this->photo->move($this->getUploadDir(),$this->photo->getClientOriginalName());
+        $this->photo=$this->photo->getClientOriginalName();
+    }
 }
